@@ -166,7 +166,7 @@ body {
     background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
     color: #555;
     font-family: 'Roboto';
-    font-weight: 300;
+    font-weight: 600;
     font-size: 32px;
     height: 100vh;
     overflow: hidden;
@@ -199,6 +199,7 @@ body {
   }
   
   ._div {
+    color: #000 !important;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
@@ -214,6 +215,7 @@ body {
   }
   
   ._span {
+    color: #555!important;
     margin-left: 355px;
     animation: slidein 7s forwards; /* Use 'forwards' to maintain the final position */
   }
@@ -254,6 +256,7 @@ body {
 
   ._text {
     font-size: .7em;
+    font-weight: 300 !important;
     opacity: 0;
     overflow: hidden;
     animation: fadeup .6s ease-out 2s 1 forwards;
@@ -357,4 +360,64 @@ body {
   margin-top: 1em ;
   /* padding: 1em; */
   column-count : 4;
+}
+
+.mens_collection{
+  padding: 3em;
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:5em;
+  font-weight: 700;
+}
+
+.mens_collection_text{
+  font-size: 3em;
+}
+
+.mens_collection_button{
+  all: unset;
+  font-size: 0.6em;
+  padding: 0.3em;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.mens_collection_button:hover{
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease-in;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-about p {
+  margin: 0;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
