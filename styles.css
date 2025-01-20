@@ -451,3 +451,7 @@ body {
   padding-top: 10px;
   border-top: 1px solid #555;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
