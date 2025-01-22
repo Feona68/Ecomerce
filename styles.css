@@ -162,32 +162,29 @@ body {
   display: flex;
   align-items: center;
 }
-
 /* Hero Section */
 ._body {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: center;
   background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
   color: #555;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 32px;
   height: 100vh;
-  width: 100%; /* Ensure full width */
+  width: 100%;
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  -webkit-transform: translate3d(0, 0, 0);
+  flex-direction: row; /* Default layout: horizontal */
 }
 
 .content-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%; /* Make it responsive */
-  padding: 0 15px; /* Ensure spacing on sides */
+  width: 100%;
+  padding: 0 15px;
 }
 
 .image-container {
@@ -206,6 +203,48 @@ body {
   text-align: left;
   padding-left: 20px;
 }
+
+/* Responsive Design: Stack text below the image on small screens */
+@media screen and (max-width: 768px) {
+  ._body {
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .content-wrapper {
+    flex-direction: column; /* Stack text and image vertically */
+    align-items: center; /* Center align the content */
+  }
+
+  .image-container {
+    order: 1; /* Ensure the image is above the text */
+    max-width: 90%; /* Reduce the image size on smaller screens */
+    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 20px; /* Add spacing between image and text */
+  }
+
+  .text-container {
+    width: 90%; /* Make text container responsive */
+    font-size: 14px; /* Reduce font size for readability */
+    text-align: center; /* Center-align the text */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content-wrapper {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
+
+  .image-container {
+    max-width: 80%; /* Further reduce the image size */
+    margin-bottom: 15px; /* Adjust spacing for smaller screens */
+  }
+
+  .text-container {
+    width: 100%; /* Ensure full width of the text container */
+    font-size: 12px; /* Further reduce font size for smaller devices */
+  }
+}
+
 
 ._div {
   color: #000 !important;
@@ -483,8 +522,23 @@ p {
   .menu-item {
       width: 100%;
   }
+
+  .content-wrapper {
+    padding: 0 10px;
+  }
+
+  .image-container {
+    order: 1; /* Image stays on top */
+    max-width: 80%; /* Further reduce the image size */
+  }
+
+  .text-container {
+    font-size: 14px; /* Reduce font size for readability */
+  }
 }
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+     
